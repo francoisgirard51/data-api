@@ -1,3 +1,7 @@
+"""
+Weather CLI
+"""
+
 import sys
 import urllib.parse
 import requests
@@ -27,12 +31,10 @@ def search_city(query):
                     choice = int(choice)
                     if 1 <= choice <= len(city_data):
                         return city_data[choice - 1]
-                    else:
-                        print("Invalid choice. Please select a valid index.")
+                    print("Invalid choice. Please select a valid index.")
                 except ValueError:
                     print("Invalid input. Please enter the index as a number.")
-            else:
-                return city_data[0]
+            return city_data[0]
     return None
 
 def weather_forecast(lat, lon):
